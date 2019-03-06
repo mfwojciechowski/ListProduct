@@ -1,0 +1,81 @@
+﻿@model IEnumerable<CoffeeShop.Domain.Entities.Product>
+@{
+    /**/
+
+    ViewBag.Title = "ProductList";
+}
+
+<p>
+    <br />
+    <br />
+    <input type="button" class="btn btn-info" value="Create Product" onclick="location.href='@Url.Action("Create", "Product")'" />
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.TextBoxFor(modelItem => item.Quantity, new { id = item.ProductId })
+
+                <span class="input-group-button">
+                    <button class="btn updateProductBtn" id="quantity" productId="@item.ProductId">
+                        <span class="octicon octicon-pencil"></span>
+                    </button>
+                </span>
+            </td>
+            <td>
+                <input type="button" class="btn btn-warning" value="Edit" onclick="location.href='@Url.Action("Edit", "Product", new{ item.ProductId})'" />
+            </td>
+        </tr>
+    }
+</table>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function () {
+
+            $(".updateProductBtn").on('click', function (event) {
+                event.stopPropagation();
+                event.stopImmediatePropagation();
+
+                var id = $(this).attr("productId");
+                var value = this.parentElement.parentElement.children[0].value;
+
+                var jsonData = JSON.stringify({
+                    'productId': id,
+                    'productQuantity': value
+                });
+                console.log(jsonData);
+
+                $.ajax({
+                    type: "POST",
+                    url: '/Product/Update?productId=' + id + "&productQuantity=" + value,
+                    data: jsonData,
+                    success: function () { alert("Item updated."); },
+                    contentType: 'application/json'
+                });
+            });
+
+        });
+    </script>
+}

@@ -1,0 +1,18 @@
+﻿SET IDENTITY_INSERT [dbo].[Products] ON
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (1, N'Chemex', CAST(190.00 AS Decimal(18, 2)), 43)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (2, N'AreoPress', CAST(120.00 AS Decimal(18, 2)), 33)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (3, N'Kawiarka', CAST(120.00 AS Decimal(18, 2)), 11)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (4, N'French Press', CAST(99.90 AS Decimal(18, 2)), 300)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (5, N'Chemex', CAST(150.00 AS Decimal(18, 2)), 43)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (6, N'AreoPress', CAST(100.00 AS Decimal(18, 2)), 23)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (7, N'Kawiarka', CAST(220.00 AS Decimal(18, 2)), 131)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (8, N'French Press', CAST(89.90 AS Decimal(18, 2)), 100)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (9, N'Chemex', CAST(160.00 AS Decimal(18, 2)), 13)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (10, N'AreoPress', CAST(330.00 AS Decimal(18, 2)), 22)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (11, N'Kawiarka', CAST(800.00 AS Decimal(18, 2)), 13)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (12, N'French Press', CAST(100 AS Decimal(18, 2)), 34)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (13, N'Chemex', CAST(260.00 AS Decimal(18, 2)), 17)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (14, N'AreoPress', CAST(140.00 AS Decimal(18, 2)), 21)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (15, N'Kawiarka', CAST(50.00 AS Decimal(18, 2)), 15)
+INSERT INTO [dbo].[Products] ([ProductId], [Name], [Price], [Quantity]) VALUES (16, N'French Press', CAST(79.90 AS Decimal(18, 2)), 10)
+SET IDENTITY_INSERT [dbo].[Products] OFF
